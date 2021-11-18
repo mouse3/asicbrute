@@ -11,7 +11,29 @@ from time import time
 from nympy import loadtxt
 mac = get_mac()
 
-def bruteforce():
+def brutewps():
+    os.system("clear")
+    os.system("wpspingenerator")
+def notbrutewpa():
+    print("you need a network card to use this tool")
+    time.sleep(2)
+    print("downloading...")
+    os.system("git clone https://github.com/derv82/wifite2.git")
+    os.system("mv wifite2/* .")
+    os.system("sudo python setup.py install")
+    time.sleep(2)
+    os.system("rm setup.py")
+    os.system("clear")
+    print("running wifite.")
+    time.sleep(1)
+    os.system("clear")
+    print("running wifite..")
+    time.sleep(1)
+    os.system("clear")
+    print("running wifite...")
+    time.sleep(2)
+    os.system("sudo wifite")
+def brutep():
     def product_loop(password, generator):
         for p in generator:
             if ''.join(p) == password:
@@ -134,6 +156,17 @@ def Connect():
 
     print("------- CONEXIÓN CERRADA ---------")
     cliente.close()
+brute-h = """
+#################################################################
+#   -wps bruteforce wps                                         #
+#   -wpa bruteforce wpa                                         #
+#   -p bruteforce at a password                                 #
+#   -gmail bruteforce at an account from gmail                  #
+#                                                               #
+#                                                               #
+#                                                               #
+#################################################################
+           """
 comandos = """
 #################################################################
 #   -help how to use                                            #
@@ -157,8 +190,12 @@ print(banner)
 print(mac)
 def menu():
     option = input(">>>")
-    if option == "bruteforce":
-        bruteforce()
+    if option == "brutefoce-wps":
+        brutewps()
+    if option == "pbruteforce-wpa":
+        brutewpa()
+    if option == "bruteforce -p":
+        brutep()
     if option == "data":
         info()
     if option == "lhost":
@@ -178,6 +215,8 @@ def menu():
         print("connect the ASIC on the server")
         time.sleep(5)
         inicio()
+    if option == "bruteforce -h":
+        print(brute-h)
 def inicio():
     menu()
     print(banner)
