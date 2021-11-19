@@ -156,7 +156,7 @@ def Connect():
 
     print("------- CONEXIÓN CERRADA ---------")
     cliente.close()
-brute-h = """
+bruteh = """
 #################################################################
 #   -wps bruteforce wps                                         #
 #   -wpa bruteforce wpa                                         #
@@ -216,7 +216,7 @@ def menu():
         time.sleep(5)
         inicio()
     if option == "bruteforce -h":
-        print(brute-h)
+        print(bruteh)
 def inicio():
     menu()
     print(banner)
